@@ -31,7 +31,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract EtherealQuestFramework is ERC721, ReentrancyGuard {
+contract DivineKeysFramework is ERC721, ReentrancyGuard {
     using Strings for uint256;
     using Counters for Counters.Counter;
 
@@ -50,7 +50,7 @@ contract EtherealQuestFramework is ERC721, ReentrancyGuard {
     mapping(uint256 => Character) public characters;
     Counters.Counter private tokenId;
 
-    constructor() ERC721("EtherealQuestCharacters", "EQC") {}
+    constructor() ERC721("DivineKeysCharacters", "DKC") {}
 
     function createCharacter(
         string memory _name,
@@ -79,7 +79,7 @@ contract EtherealQuestFramework is ERC721, ReentrancyGuard {
             bytes(
                 string(
                     abi.encodePacked(
-                        '{"name": "', character.name, '", "description": "An Ethereal Quest character", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(svg)), '"}'
+                        '{"name": "', character.name, '", "description": "A Divine Keys character", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(svg)), '"}'
                     )
                 )
             )
@@ -92,7 +92,13 @@ contract EtherealQuestFramework is ERC721, ReentrancyGuard {
         string memory svg = string(
             abi.encodePacked(
                 '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 300 300">',
-                // Add SVG elements to represent the character's race, class, attributes, etc.
+                '<rect width="100%" height="100%" fill="white"/>',
+                '<text x="10" y="20" font-family="Verdana" font-size="14">Name: ', character.name, '</text>',
+                '<text x="10" y="40" font-family="Verdana" font-size="14">Race: ', character.race, '</text>',
+                '<text x="10" y="60" font-family="Verdana" font-size="14">Class: ', character.class, '</text>',
+                '<text x="10" y="80" font-family="Verdana" font-size="14">Strength: ', character.strength.toString(), '</text>',
+                '<text x="10" y="100" font-family="Verdana" font-size="14">Dexterity: ', character.dexterity.toString(), '</text>',
+                '<text x="10" y="120" font-family="Verdana" font-size="14">Intelligence: ', character.intelligence.toString(), '</text>',
                 '</svg>'
             )
         );
@@ -100,14 +106,8 @@ contract EtherealQuestFramework is ERC721, ReentrancyGuard {
         return svg;
     }
 
-    function _randomAttribute(uint256 tokenId, string memory salt) internal view returns (uint256) {
-        uint256 randomNumber = uint256(keccak256(abi.encodePacked(tokenId, salt, block.timestamp))) % 20;
-        return randomNumber + 1;
-    }
+function _randomAttribute(uint256 tokenId, string memory salt) internal view returns (uint256) {
+    uint256 randomValue = uint256(keccak256(abi.encodePacked(block.timestamp, tokenId, salt)));
+    return (randomValue % 20) + 1;
 }
-
-library Base64 {
-    bytes internal constant TABLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-
-    // ... (Base64 encoding and decoding functions)
 ```
