@@ -111,3 +111,26 @@ function _randomAttribute(uint256 tokenId, string memory salt) internal view ret
     return (randomValue % 20) + 1;
 }
 ```
+
+## DUNGEONS
+Each dungeon is a traversable graph, however, we represent this graph as a matrix since it's in a smart contract. Users explore this dungeon in the same way they would traverse this graph.
+```
+pragma solidity ^0.8.0;
+
+contract Dungeon {
+    uint8 public constant MATRIX_SIZE = 8;
+    uint256[MATRIX_SIZE][MATRIX_SIZE] public matrix;
+
+    function setMatrixValue(uint8 x, uint8 y, uint256 value) public {
+        require(x < MATRIX_SIZE, "X-coordinate out of bounds");
+        require(y < MATRIX_SIZE, "Y-coordinate out of bounds");
+        matrix[x][y] = value;
+    }
+
+    function getMatrixValue(uint8 x, uint8 y) public view returns (uint256) {
+        require(x < MATRIX_SIZE, "X-coordinate out of bounds");
+        require(y < MATRIX_SIZE, "Y-coordinate out of bounds");
+        return matrix[x][y];
+    }
+}
+```
