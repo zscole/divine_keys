@@ -114,6 +114,11 @@ function _randomAttribute(uint256 tokenId, string memory salt) internal view ret
 
 ## DUNGEONS
 Each dungeon is a traversable graph, however, we represent this graph as a matrix since it's in a smart contract. Users explore this dungeon in the same way they would traverse this graph.
+
+The Dungeons contract allows users to set and get values in the 8x8 matrix. A frontend web application is used to interact with the smart contract and display a graph based on the data in the matrix. To achieve this, we use Ethers.js to interact with the smart contract and a library like D3.js or Chart.js to create the graph. 
+
+Since the game is meant to be played in real-time, where each move is as fast as Canto blocktime, to avoid collusion in the event multiple players are within a given dungeon, we store their locations within the graph (position in the dungeon), check for conflicts and require users to commit when there is a conflict. If a user changes the site client side and tries to progress then the other side would reject it and the game is halted.
+
 ```
 pragma solidity ^0.8.13;
 
