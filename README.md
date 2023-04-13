@@ -18,7 +18,7 @@ A more important disclaimer is that these are POC contracts. They are not the ac
 # OVERVIEW
 Divine Keys is the first of what I've been calling a `decentralized dungeon protocol`. It's fully on-chain and presents an immersive and text-based MMORPG game in which players create and control characters to explore and adventure in a virtual world. The architecture for this game is heavily inspired by early [Multi-User Dungeon](https://en.wikipedia.org/wiki/MUD) games from the mid-90s as well as Dungeons & Dragons and, of course, Loot.
 
-Within the world of Divine Keys, players can interact with each other in a  realm where they can engage in combat (either cooperatively or via PVP), complete quests, and build their characters. Players can communicate with each other through text-based chat, and form factions or clans within the game.
+Within the world of Divine Keys, players can interact with each other in a  realm where they can engage in combat (either cooperatively or via PVP), complete quests, explore the world, and build their characters. Players can communicate with each other through text-based chat, and form factions or clans within the game. 
 
 As a fully text-based game, Divine Keys can be played using a simple browser-based CLI application. It would present similar to [A Dark Room](https://adarkroom.doublespeakgames.com/) in the way the user interacts with it, but would emulate a terminal experience in the browser.   
 
@@ -153,7 +153,7 @@ contract Dungeon {
 }
 ```
 
-The code above is a simple POC to demonstrate how the physical space of a dungeon can be represented using a matrix. Dungeons will likely be more configurable and deployable via through a Dungeon factory contract, allowing users to create their own custom dungeons Additional logic can be wrapped around these dungeons to provide composability and token logic which allows users to represent these dungeons as non-fungible tokens which can then be traded with other players. 
+The code above is a simple POC to demonstrate how the physical space of a dungeon can be represented using a matrix. Dungeons will likely be more configurable and deployable via through a Dungeon factory contract, allowing users to create their own custom dungeons. Additional logic can be wrapped around these dungeons to provide composability and token logic which allows users to represent these dungeons as non-fungible tokens which can then be traded with other players. 
 
 ## COMBAT SYSTEM
 The following contract represents a simple combat system. It imports the DivineKeysFramework contract to access the characters and the `engageInCombat` function accepts two token IDs, one for the attacker and one for the defender. The function calculates the power of each character based on their attributes and emits a `CombatResult` event with the winner's information. Again, please keep in mind that this is a POC and there are more advanced mechanics necessary in order to make this work in a production environment.
