@@ -123,8 +123,6 @@ The above code generates an on-chain SVG, similar to what we're already familiar
 
 ![Example Character Card](/character-card.jpg "Example Character Card")
 
-
-
 ## DUNGEONS
 Each dungeon is a traversable graph, however, we represent this graph as a matrix since it's in a smart contract. Users explore this dungeon in the same way they would traverse this graph.
 
@@ -198,5 +196,9 @@ contract DivineKeysCombat is Ownable {
 }
 ```
 
+## TODO
+[] Write out quest and events mechanics
+[] Write out governance system mechanics
+[] Write out integrations logic
 
 
