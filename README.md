@@ -24,7 +24,8 @@ The storyline and world-building lore is not included in this repository, as it'
 
 # ARCHITECTURE
 ## Game Framework
-The game framework smart contract is the engine that defines logic that for the basic rules of the game, including character creation, and game world structure.
+The game framework smart contract is the engine that defines logic that for the basic rules of the game, including character creation, and game world structure. `DivineKeysFramework.sol` ties all of the components together in a cohesive manner to present a fully functional game.
+  
 The contract includes a list of registered players, character information, and in-game assets (e.g., items, NPCs, locations). The game framework consists of a series of contracts that are being written in a private repository that also contains more functional versions of the POC contracts provided within this document. If this document gets any traction and proves that individuals would like to contribute to the overall project, I will make that repository public. 
 
 ## Character Creation
