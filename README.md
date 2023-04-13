@@ -41,7 +41,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract DivineKeysFramework is ERC721, ReentrancyGuard {
+contract DivineKeysCharacter is ERC721, ReentrancyGuard {
     using Strings for uint256;
     using Counters for Counters.Counter;
 
