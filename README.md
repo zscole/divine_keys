@@ -197,8 +197,8 @@ contract DivineKeysCombat is Ownable {
 ```
 
 ## TODO
-[] Write out quest and events mechanics
-[] Write out governance system mechanics
-[] Write out integrations logic
+[] Write out quest and events mechanics  
+[] Write out governance system mechanics  
+[] Write out integrations logic  
 
 
