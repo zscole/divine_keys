@@ -7,10 +7,11 @@
 ```
 ----------------------------------------------------------
 # DIVINE KEYS: DECENTRALIZED DUNGEONS
+### WORK IN PROGRESS
 ----------------------------------------------------------
   
 # OVERVIEW
-Divine Keys is a fully on-chain decentralized dungeon protocol that presents an immersive and text-based game in which players create and control characters to explore and aventure in a virtual world.
+Divine Keys is a fully on-chain `decentralized dungeon protocol` that presents an immersive and text-based game in which players create and control characters to explore and aventure in a virtual world.
 
 Within the world of Divine Keys, players can interact with each other in a  realm, where they can engage in combat (either cooperatively or via PVP), complete quests, and build their characters. Players can communicate with each other through text-based chat, and form factions or clans within the game.
 
