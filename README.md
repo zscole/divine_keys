@@ -113,6 +113,11 @@ function _randomAttribute(uint256 tokenId, string memory salt) internal view ret
     return (randomValue % 20) + 1;
 }
 ```
+The above code generates an on-chain SVG, similar to what we're already familiar with from the Loot project. Below is an example of the character card that is generated.
+
+![Example Character Card](/character-card.jpg "Example Character Card")
+
+
 
 ## DUNGEONS
 Each dungeon is a traversable graph, however, we represent this graph as a matrix since it's in a smart contract. Users explore this dungeon in the same way they would traverse this graph.
