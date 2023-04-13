@@ -20,6 +20,8 @@ Within the world of Divine Keys, players can interact with each other in a  real
 
 As a fully text-based game, Divine Keys can be played using a simple browser-based CLI application. It would present similar to [A Dark Room](https://adarkroom.doublespeakgames.com/) in the way the user interacts with it, but would emulate a terminal experience in the browser.   
 
+The storyline and world-building lore is not included in this repository, as it's meant to simply communicate the concept and present a proof-of-concept for the architecture.
+
 # ARCHITECTURE
 ## Game Framework
 The game framework smart contract that defines logic that for the basic rules of the game, including character creation, and game world structure.
@@ -151,3 +153,49 @@ contract Dungeon {
 ```
 
 The code above is a simple POC to demonstrate how the physical space of a dungeon can be represented using a matrix. Dungeons will likely be more configurable and deployable via through a Dungeon factory contract, allowing users to create their own custom dungeons Additional logic can be wrapped around these dungeons to provide composability and token logic which allows users to represent these dungeons as non-fungible tokens which can then be traded with other players. 
+
+## COMBAT SYSTEM
+The following contract represents a simple combat system. It imports the DivineKeysFramework contract to access the characters and the `engageInCombat` function accepts two token IDs, one for the attacker and one for the defender. The function calculates the power of each character based on their attributes and emits a `CombatResult` event with the winner's information. Again, please keep in mind that this is a POC and there are more advanced mechanics necessary in order to make this work in a production environment.
+
+```
+pragma solidity ^0.8.13;
+
+import "./DivineKeysFramework.sol";
+
+contract DivineKeysCombat is Ownable {
+    DivineKeysFramework private dkFramework;
+
+    constructor(address divineKeysFrameworkAddress) {
+        dkFramework = DivineKeysFramework(divineKeysFrameworkAddress);
+    }
+
+    event CombatResult(address indexed attacker, address indexed defender, string winner);
+
+    function engageInCombat(uint256 attackerTokenId, uint256 defenderTokenId) external {
+        require(dkFramework.ownerOf(attackerTokenId) == msg.sender, "You do not own the attacking character");
+
+        DivineKeysFramework.Character memory attacker = dkFramework.characters(attackerTokenId);
+        DivineKeysFramework.Character memory defender = dkFramework.characters(defenderTokenId);
+
+        uint256 attackerPower = _calculatePower(attacker);
+        uint256 defenderPower = _calculatePower(defender);
+
+        string memory winner;
+
+        if (attackerPower >= defenderPower) {
+            winner = "Attacker";
+        } else {
+            winner = "Defender";
+        }
+
+        emit CombatResult(msg.sender, dkFramework.ownerOf(defenderTokenId), winner);
+    }
+
+    function _calculatePower(DivineKeysFramework.Character memory character) internal pure returns (uint256) {
+        return (character.strength * 2) + character.dexterity + character.intelligence;
+    }
+}
+```
+
+
+
