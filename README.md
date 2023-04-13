@@ -31,7 +31,7 @@ The game framework smart contract is the engine that defines logic that for the 
 The contract includes a list of registered players, character information, and in-game assets (e.g., items, NPCs, locations). The game framework consists of a series of contracts that are being written in a private repository that also contains more functional versions of the POC contracts provided within this document. If this document gets any traction and proves that individuals would like to contribute to the overall project, I will make that repository public. 
 
 ## Character Creation
-Users are able to customize their chracter's `name`, `race`, and `class`. The remaining stats are randomly generated upon mint. These stats cannot be changed once the character NFT has been minted. Instead, these stats can be modified, or boosted, in combination with unique items that can be aquired in-game by completing quests, looting fallen opponents in PVP matches, found randomly in dungeons, or traded within other players. 
+Users are able to customize their chracter's `name`, `race`, and `class`. The remaining stats are randomly generated upon mint. These stats cannot be changed once the character NFT has been minted. Instead, these stats can be modified, or boosted, in combination with unique items that can be aquired in-game by completing quests, looting fallen opponents in PVP matches, found randomly in dungeons, or traded within other players. The production implementation of this contract will follow a factory pattern.
 
 ```
 pragma solidity ^0.8.13;
@@ -124,6 +124,7 @@ function _randomAttribute(uint256 tokenId, string memory salt) internal view ret
 The above code generates an on-chain SVG, similar to what we're already familiar with from the Loot project. Below is an example of the character card that is generated.
 
 ![Example Character Card](/character-card.jpg "Example Character Card")
+
 
 ## DUNGEONS
 Each dungeon is a traversable graph, however, we represent this graph as a matrix since it's in a smart contract. Users explore this dungeon in the same way they would traverse this graph.
