@@ -139,3 +139,5 @@ contract Dungeon {
     }
 }
 ```
+
+The code above is a simple POC to demonstrate how the physical space of a dungeon can be represented using a matrix. Dungeons will likely be more configurable and deployable via through a Dungeon factory contract, allowing users to create their own custom dungeons Additional logic can be wrapped around these dungeons to provide composability and token logic which allows users to represent these dungeons as non-fungible tokens which can then be traded with other players. 
