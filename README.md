@@ -18,7 +18,7 @@ Divine Keys is a fully on-chain `decentralized dungeon protocol` that presents a
 
 Within the world of Divine Keys, players can interact with each other in a  realm, where they can engage in combat (either cooperatively or via PVP), complete quests, and build their characters. Players can communicate with each other through text-based chat, and form factions or clans within the game.
 
-As a fully text-based game, Divine Keys can be played using a simple browser-based CLI application similar to [A Dark Room](https://adarkroom.doublespeakgames.com/).  
+As a fully text-based game, Divine Keys can be played using a simple browser-based CLI application. It would present similar to [A Dark Room](https://adarkroom.doublespeakgames.com/) in the way the user interacts with it, but would emulate a terminal experience in the browser.   
 
 # ARCHITECTURE
 ## Game Framework
