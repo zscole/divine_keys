@@ -9,18 +9,21 @@
 # DIVINE KEYS: DECENTRALIZED DUNGEONS
 ### WORK IN PROGRESS
 ----------------------------------------------------------
-  
+
+# DISCLAIMER
+This is a work in progress. This is a personal project for research purposes and for fun. It is not affiliated with any particular network, organization, group, company, or otherwise. There is no intention to `rAiSe cApItAl` for this project, so if you're seeking to extract value, the most optimal strategy is to just contribute or fork off. 
+
 # OVERVIEW
-Divine Keys is a fully on-chain `decentralized dungeon protocol` that presents an immersive and text-based game in which players create and control characters to explore and aventure in a virtual world.
+Divine Keys is a fully on-chain `decentralized dungeon protocol` that presents an immersive and text-based MMORPG game in which players create and control characters to explore and adventure in a virtual world. The architecture for this game is heavily inspired by early [Multi-User Dungeon](https://en.wikipedia.org/wiki/MUD) games from the mid-90s as well as Dungeons & Dragons.
 
 Within the world of Divine Keys, players can interact with each other in a  realm, where they can engage in combat (either cooperatively or via PVP), complete quests, and build their characters. Players can communicate with each other through text-based chat, and form factions or clans within the game.
 
-As a fully text-based game, Divine Keys can be played using a simple CLI based client or in-browser. 
+As a fully text-based game, Divine Keys can be played using a simple browser-based CLI application similar to [A Dark Room](https://adarkroom.doublespeakgames.com/).  
 
 # ARCHITECTURE
 ## Game Framework
 The game framework smart contract that defines logic that for the basic rules of the game, including character creation, and game world structure.
-The contract includes a list of registered players, character information, and in-game assets (e.g., items, NPCs, locations).
+The contract includes a list of registered players, character information, and in-game assets (e.g., items, NPCs, locations). The game framework consists of a series of contracts that are being written in a private repository that also contains more functional versions of the POC contracts provided within this document. If this document gets any traction and proves that individuals would like to contribute to the overall project, I will make that repository public. 
 
 ## Character Creation
 Users are able to customize their chracter's `name`, `race`, and `class`. The remaining stats are randomly generated upon mint. These stats cannot be changed once the character NFT has been minted. Instead, these stats can be modified, or boosted, in combination with unique items that can be aquired in-game by completing quests, looting fallen opponents in PVP matches, found randomly in dungeons, or traded within other players. 
