@@ -23,7 +23,7 @@ The game framework smart contract that defines logic that for the basic rules of
 The contract includes a list of registered players, character information, and in-game assets (e.g., items, NPCs, locations).
 
 ## Character Creation
-Users are able to customize their chracter's `name`, `race`, and `class`. The remaining stats are randomly generated upon mint. These stats cannot be changed once the character NFT has been minted. Instead, these stats can be modified, or boosted, in combination with unique items that can be aquired in-game by completing quests, looting fallen opponents in PVP matches, found randomly in dungeons, or purchased within the marketplace. 
+Users are able to customize their chracter's `name`, `race`, and `class`. The remaining stats are randomly generated upon mint. These stats cannot be changed once the character NFT has been minted. Instead, these stats can be modified, or boosted, in combination with unique items that can be aquired in-game by completing quests, looting fallen opponents in PVP matches, found randomly in dungeons, or traded within other players. 
 
 ```
 pragma solidity ^0.8.13;
