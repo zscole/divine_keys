@@ -13,7 +13,7 @@
 # DISCLAIMER
 This is a work in progress. This is a personal project for research purposes and for fun. It is not affiliated with any particular network, organization, group, company, or otherwise. There is no intention to `rAiSe cApItAl` for this project, so if you're seeking to extract value, the most optimal strategy is to just contribute or fork off.  
   
-A more important disclaimer is that these are POC contracts. They are not the actual contracts that are implemented in the game itself; they're just meant to help communicate the idea. The code for the actual Divine Keys game is in a private (for now) repository, so take this logic with a grain of salt and assume that the contracts are vulnerable to multiple exploits should you decide to copy/paste them and run with the idea, you do so at your own risk.
+A more important disclaimer is that these are POC contracts. They are not the actual contracts that are implemented in the game itself; they're just meant to help communicate the idea. The code for the actual Divine Keys game is in a private (for now) repository, so take this logic with a grain of salt and assume that the contracts are vulnerable to multiple exploits. Should you decide to copy/paste them and run with the idea, you do so at your own peril.
 
 # OVERVIEW
 Divine Keys is the first of what I've been calling a `decentralized dungeon protocol`. It's fully on-chain and presents an immersive and text-based MMORPG game in which players create and control characters to explore and adventure in a virtual world. The architecture for this game is heavily inspired by early [Multi-User Dungeon](https://en.wikipedia.org/wiki/MUD) games from the mid-90s as well as Dungeons & Dragons and, of course, Loot.
